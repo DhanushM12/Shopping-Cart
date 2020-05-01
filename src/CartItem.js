@@ -25,14 +25,14 @@ class CartItem extends React.Component {
       //here it is a synchronous call
       this.setState({ qty: 100 });
       console.log("state", this.state);
-    });*/
-  }
+    });
+  }*/
   increaseQuantity = () => {
     //this.state.quantity += 1 -> this won't update in the UI
     //console.log("this", this.state);
     //so we use React.Component function setState
     //1st way
-    /*this.setState({s
+    /*this.setState({
       qty: this.state.qty + 1,
     });*/
     //2nd way
