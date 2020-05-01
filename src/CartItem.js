@@ -14,7 +14,19 @@ class CartItem extends React.Component {
     //this.increaseQuantity = this.increaseQuantity.bind(this);
   }
   increaseQuantity = () => {
-    console.log("this", this.state);
+    //this.state.quantity += 1 -> this won't update in the UI
+    //console.log("this", this.state);
+    //so we use React.Component function setState
+    //1st way
+    /* this.setState({
+        qty : this.state.qty +1
+    });*/
+    //2nd way
+    this.setState((prevState) => {
+      return {
+        qty: prevState.qty + 1,
+      };
+    });
   };
   render() {
     const { price, title, qty } = this.state; //object destructuring
