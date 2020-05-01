@@ -11,7 +11,11 @@ class CartItem extends React.Component {
       qty: 1,
       img: "",
     };
+    //this.increaseQuantity = this.increaseQuantity.bind(this);
   }
+  increaseQuantity = () => {
+    console.log("this", this.state);
+  };
   render() {
     const { price, title, qty } = this.state; //object destructuring
     return (
@@ -24,11 +28,12 @@ class CartItem extends React.Component {
           <div style={{ color: "#777" }}>Rs. {price}</div>
           <div style={{ color: "#777" }}>Qty : {qty}</div>
           <div className="cart-item-actions">
-            {/* Buttons */}
+            {/* Buttons - binding is done to avoid the loss of this */}
             <img
               alt="increase"
               className="actions-icon"
               src="https://image.flaticon.com/icons/svg/992/992651.svg"
+              onClick={this.increaseQuantity /*.bind(this)*/}
             />
             <img
               alt="decrease"
