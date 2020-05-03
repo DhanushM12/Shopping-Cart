@@ -3,7 +3,7 @@ import React from "react";
 //will inherit some features from React.Component
 class CartItem extends React.Component {
   //defining the state in constructor
-  constructor() {
+  /* constructor() {
     super(); //calling the super constructor that is React.Component
     this.state = {
       title: "Mobile Phone",
@@ -13,7 +13,7 @@ class CartItem extends React.Component {
     };
     //this.increaseQuantity = this.increaseQuantity.bind(this);
     //this.testing();
-  }
+  }*/
   /*testing() {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -54,9 +54,11 @@ class CartItem extends React.Component {
     });
   };
   render() {
-    const { price, title, qty } = this.state; //object destructuring
+    console.log("this.props", this.props);
+    const { price, title, qty } = this.props.product; //object destructuring
     return (
       <div className="cart-item">
+        {this.props.jsx}
         <div className="left-block">
           <img style={styles.image} />
         </div>
